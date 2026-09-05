@@ -1,0 +1,19 @@
+# Local Java runtime
+jdk-21/
+
+# Large installers / executables
+playit-setup.msi
+playit.exe
+
+# Build artifacts and temp
+plugin_src/bin/
+plugin_src/ecj.jar
+*.tmp
+*.log
+logs/
+cache/
+crash-reports/
+.console_history
+
+# Generated libraries (Paper automatically re-downloads if needed)
+libraries/

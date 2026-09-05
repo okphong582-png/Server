@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 14.228.219.135
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1788447430028
+  login: 1788445110641
+money: '-1'
+last-account-name: kem123
+lastlocation:
+  world: f97d9bf8-1602-4463-a922-0eb839660e5c
+  world-name: world
+  x: -33.0250127968362
+  y: 67.30308497226719
+  z: -28.80137872455518
+  yaw: -50.970703125
+  pitch: 40.228946685791016
+logoutlocation:
+  world: f97d9bf8-1602-4463-a922-0eb839660e5c
+  world-name: world
+  x: 2.587340325821111
+  y: 66.79024766206565
+  z: -24.853697937736786
+  yaw: -121.333740234375
+  pitch: 73.40283203125

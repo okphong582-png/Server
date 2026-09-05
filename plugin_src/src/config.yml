@@ -1,0 +1,29 @@
+# Cấu hình FunServerCore
+server:
+  name: "&e&l⭐ HOANGHA NETWORK ⭐"
+  domain: "cynthia-brings.tun.ply.gg"
+
+lobby:
+  world: "world"
+  x: 0.5
+  y: 70.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+  radius: 80.0
+
+pvp:
+  world: "world"
+  x: 200.5
+  y: 70.0
+  z: 200.5
+  yaw: 0.0
+  pitch: 0.0
+
+mine:
+  world: "world"
+  x: -200.5
+  y: 65.0
+  z: -200.5
+  yaw: 0.0
+  pitch: 0.0

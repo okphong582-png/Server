@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 171.228.223.0
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1788447389330
+  login: 1788445859130
+money: '0'
+last-account-name: ben10hehe
+lastlocation:
+  world: f97d9bf8-1602-4463-a922-0eb839660e5c
+  world-name: world
+  x: -2409.5
+  y: 63.0
+  z: 846.5
+  yaw: 23.40000343322754
+  pitch: 23.100000381469727
+logoutlocation:
+  world: f97d9bf8-1602-4463-a922-0eb839660e5c
+  world-name: world
+  x: 8.33234403980599
+  y: 64.0
+  z: -32.53274661294192
+  yaw: -31.199951171875
+  pitch: 39.14997863769531

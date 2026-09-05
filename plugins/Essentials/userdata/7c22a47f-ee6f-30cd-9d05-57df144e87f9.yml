@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 14.187.125.146
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1788445960182
+  login: 1788445042087
+money: '0'
+last-account-name: luonghuynhlong
+lastlocation:
+  world: f97d9bf8-1602-4463-a922-0eb839660e5c
+  world-name: world
+  x: 25.5
+  y: 71.0
+  z: -45.5
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: f97d9bf8-1602-4463-a922-0eb839660e5c
+  world-name: world
+  x: 61.07564539935825
+  y: 71.0
+  z: -83.81229520776479
+  yaw: 142.70404052734375
+  pitch: 30.74999237060547

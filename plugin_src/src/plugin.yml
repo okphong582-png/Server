@@ -1,0 +1,68 @@
+name: FunServerCore
+version: 1.0.0
+main: com.funserver.FunServerCore
+api-version: '1.21'
+author: Antigravity
+description: Core plugin for Fun Minecraft Server with Firebase Auth, HoangHa HUD, Mine, Economy, PvP, Snake HTML5, and 1v1 Chess.
+
+commands:
+  dangki:
+    description: Dang ky tai khoan tren Firebase
+    aliases: [register]
+    usage: /dangki <mat_khau>
+  dangnhap:
+    description: Dang nhap vao may chu
+    aliases: [login]
+    usage: /dangnhap <mat_khau>
+  doimk:
+    description: Doi mat khau tai khoan
+    usage: /doimk <mat_khau_cu> <mat_khau_moi>
+  game:
+    description: Mo menu danh sach mini-games
+    aliases: [minigame, trochoi]
+    usage: /game
+  covua:
+    description: Thach dau co vua 1v1 voi nguoi choi trong server
+    aliases: [chess]
+    usage: /covua <player>
+  lobby:
+    description: Dich chuyen ve sanh chinh
+    aliases: [spawn]
+    usage: /lobby
+  setlobby:
+    description: Dat vi tri sanh chinh (Admin)
+    usage: /setlobby
+  pvp:
+    description: Dich chuyen toi dau truong PvP
+    usage: /pvp
+  setpvp:
+    description: Dat vi tri dau truong PvP (Admin)
+    usage: /setpvp
+  mine:
+    description: Dich chuyen toi khu dao mo khoang san
+    usage: /mine
+  setmine:
+    description: Dat vi tri khu dao mo (Admin)
+    usage: /setmine
+  sinhton:
+    description: Dich chuyen ngau nhien ra the gioi sinh ton hoang da
+    aliases: [rtp]
+    usage: /sinhton
+  ban:
+    description: Ban quang va da cuoi trong kho do lay tien xu
+    aliases: [sell]
+    usage: /ban
+  mua:
+    description: Cua hang mua vat pham
+    aliases: [shop]
+    usage: /mua
+  tien:
+    description: Xem so du tien xu hien tai
+    aliases: [money]
+    usage: /tien
+  build:
+    description: Bat tat che do xay dung tai sanh cho Admin
+    usage: /build
+  congtien:
+    description: Cong tien xu cho nguoi choi (Admin)
+    usage: /congtien <player> <so_tien>
