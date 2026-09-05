@@ -2,10 +2,14 @@ name: Run Minecraft Server
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *' # Tự động chạy lại mỗi 6 tiếng
   push:
     branches:
       - main
-      - master
+
+permissions:
+  contents: write
 
 jobs:
   run-server:
@@ -26,4 +30,14 @@ jobs:
       - name: Run Minecraft Paper Server
         run: |
           echo "eula=true" > eula.txt
-          java -Xms2G -Xmx6G -XX:+UseG1GC -jar server.jar --nogui
+          java -Xms2G -Xmx6G -XX:+UseG1GC -jar server.jar nogui
+
+      - name: Auto-save World and Server Data
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add world/ world_nether/ world_the_end/ plugins/
+          git commit -m "Auto-save world and player data from cloud [skip ci]" || echo "No changes to commit"
+          git push || echo "Push failed or nothing to push"
+
