@@ -3,17 +3,19 @@ name: Run Minecraft Server
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' # Tự động chạy lại mỗi 6 tiếng
+    - cron: '0 */5 * * *' # Tự động kích hoạt định kỳ mỗi 5 tiếng
   push:
     branches:
       - main
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   run-server:
     runs-on: ubuntu-latest
+    timeout-minutes: 330
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,17 +29,32 @@ jobs:
       - name: Make scripts executable
         run: chmod -R +x .
 
-      - name: Run Minecraft Paper Server
+      - name: Run Minecraft Paper Server (5 Tiếng)
         run: |
           echo "eula=true" > eula.txt
-          java -Xms2G -Xmx6G -XX:+UseG1GC -jar server.jar nogui
+          echo "=== BẮT ĐẦU MÁY CHỦ MINECRAFT: $(date) ==="
+          echo "Máy chủ sẽ chạy liên tục trong 5 tiếng (300 phút), sau đó tự động lưu map và khởi động ca mới."
+          # Chạy đúng 300 phút (5 tiếng), gửi SIGTERM để server lưu dữ liệu chunk êm ái
+          timeout --preserve-status -k 60s -s TERM 300m java -Xms2G -Xmx6G -XX:+UseG1GC -jar server.jar nogui || true
+          echo "=== KẾT THÚC CA 5 TIẾNG: $(date) ==="
 
       - name: Auto-save World and Server Data
         if: always()
         run: |
+          echo "=== ĐANG LƯU DỮ LIỆU THẾ GIỚI VÀ TIẾN TRÌNH NGƯỜI CHƠI ==="
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add world/ world_nether/ world_the_end/ plugins/
           git commit -m "Auto-save world and player data from cloud [skip ci]" || echo "No changes to commit"
-          git push || echo "Push failed or nothing to push"
+          git push origin main || echo "Push failed or nothing to push"
 
+      - name: Auto-trigger Next 5-Hour Shift (Tự chạy tiếp tục)
+        if: always()
+        run: |
+          echo "=== ĐANG KÍCH HOẠT CA 5 TIẾNG TIẾP THEO ==="
+          curl -s -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.AUTO_RESTART_TOKEN || secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/run-server.yml/dispatches \
+            -d '{"ref":"main"}' || true
+          echo "Đã gửi tín hiệu kích hoạt ca mới!"
