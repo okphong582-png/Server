@@ -17,8 +17,8 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1788447430028
-  login: 1788445110641
+  logout: 1788669420162
+  login: 1788669360146
 money: '-1'
 last-account-name: kem123
 lastlocation:
@@ -35,5 +35,5 @@ logoutlocation:
   x: 2.587340325821111
   y: 66.79024766206565
   z: -24.853697937736786
-  yaw: -121.333740234375
-  pitch: 73.40283203125
+  yaw: -96.0587387084961
+  pitch: 90.0
